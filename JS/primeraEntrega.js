@@ -1,3 +1,54 @@
+
+class Aceite {
+    constructor(aceite, precio) {
+        this.id = aceite.id
+        this.marca = aceite.marca
+        this.descripcion = aceite.descripcion
+        this.tipo = aceite.tipo
+        this.precio = precio
+    }
+
+    sacarPrecio() {
+        this.precio = precio * 1.25
+    }
+}
+
+let Aceites = [
+    {
+        id: 0,
+        marca: "Castrol",
+        descripcion: "10w-40",
+        tipo: "Semisintetico",
+        precio: 1500,
+    },
+    {
+        id: 1,
+        marca: "Mobil",
+        descripcion: "10w-50",
+        tipo: "Sintetico",
+        precio: 1000,
+    },
+    {
+        id: 2,
+        marca: "Total",
+        descripcion: "5w-40",
+        tipo: "Semisintetico",
+        precio: 1800,
+    },
+    {
+        id: 3,
+        marca: "YPF",
+        descripcion: "10w-60",
+        tipo: "Sintetico",
+        precio: 800,
+    },
+];
+
+
+Aceites.push({ id: 4,  marca: "Shell", descripcion: "10w-50", tipo: "Semisintetico", precio: 1500 })
+
+console.log(Aceites);
+
 let filtroCostos = {
     aceite: 1200,
     aire: 800,
@@ -24,3 +75,18 @@ function cotizador() {
 }
 
 cotizador();
+
+
+for (let i = 0; i < Aceites.length; i++) {
+    console.log(Aceites[i]);
+}
+
+let PrecioNuevoEjemplo1 = []
+
+PrecioNuevoEjemplo1 = Aceites.map((aceite) => {
+    aceite.precio = aceite.precio * 1.25
+    return aceite
+})
+
+console.log(PrecioNuevoEjemplo1);
+
