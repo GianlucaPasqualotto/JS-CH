@@ -56,25 +56,25 @@ let filtroCostos = {
     habitáculo: 800,
 }
 
-function cotizador() {
-    let nombre = prompt ("Bienvenido, ingrese su nombre y apellido")
-    let filtro = prompt("Bienvenido: " + nombre + " " + "\n Ingrese la opción deseada \n"  + "¿Qué filtro necesita? \n - 1 Filtro de aceite \n - 2 Filtro de aire \n - 3 Filtro de combustible \n - 4 Filtro de habitáculo \n - 5 Salir")
-    if (filtro == 1) {
-        alert("El precio del filtro es " + "$" + (filtroCostos.aceite*1.25))
-    } else if (filtro == 2) {
-        alert("El precio del filtro es " + "$" + (filtroCostos.aire*1.25))
-    } else if (filtro == 3) {
-        alert("El precio del filtro es " + "$" + (filtroCostos.combustible*1.25))
-    } else if (filtro == 4) {
-        alert("El precio del filtro es " + "$" + (filtroCostos.habitáculo*1.25))
-    } else if (filtro == 5) {
-        return
-    } else {
-        alert("Número incorrecto. Por favor ingrese una de las opciones")
-    }
-}
+// function cotizador() {
+//     let nombre = prompt ("Bienvenido, ingrese su nombre y apellido")
+//     let filtro = prompt("Bienvenido: " + nombre + " " + "\n Ingrese la opción deseada \n"  + "¿Qué filtro necesita? \n - 1 Filtro de aceite \n - 2 Filtro de aire \n - 3 Filtro de combustible \n - 4 Filtro de habitáculo \n - 5 Salir")
+//     if (filtro == 1) {
+//         alert("El precio del filtro es " + "$" + (filtroCostos.aceite*1.25))
+//     } else if (filtro == 2) {
+//         alert("El precio del filtro es " + "$" + (filtroCostos.aire*1.25))
+//     } else if (filtro == 3) {
+//         alert("El precio del filtro es " + "$" + (filtroCostos.combustible*1.25))
+//     } else if (filtro == 4) {
+//         alert("El precio del filtro es " + "$" + (filtroCostos.habitáculo*1.25))
+//     } else if (filtro == 5) {
+//         return
+//     } else {
+//         alert("Número incorrecto. Por favor ingrese una de las opciones")
+//     }
+// }
 
-cotizador();
+// cotizador();
 
 
 for (let i = 0; i < Aceites.length; i++) {
@@ -90,3 +90,19 @@ PrecioNuevoEjemplo1 = Aceites.map((aceite) => {
 
 console.log(PrecioNuevoEjemplo1);
 
+let miFormulario = document.getElementById("containerPrueba");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario (e) {
+    e.preventDefault();
+    let miFormulario = e.target
+    console.log("Registro exitoso");
+}
+
+function imprimirDatosPrompt () {
+    let dato = prompt("Ingrese nombre y apellido");
+    let carrito = document.querySelector("#carrito");
+    carrito.innerHTML = `<p>Bienvenido ${dato}</p>`;
+}
+
+imprimirDatosPrompt();
