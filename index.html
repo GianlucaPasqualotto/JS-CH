@@ -1,86 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rapid Lube Service</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    </head>
-
-    <body>
-        
-        <nav class="navbar bg-light">
-            <div class="container-fluid">
-            <a class="navbar-brand">Rapid Lube Service</a>
-                <form class="d-flex" role="Buscar">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-        <h3>Desafío Incorporar Eventos</h3>
-        <div id = "carrito"></div>
-        <form id="containerPrueba" action="#" method="post">
-            <fieldset class="mb-3">
-                <legend>Complete el siguiente formulario para obtener su presupuesto</legend>
-                <div class="mb-3">
-                    <label for="Nombre y Apellido" class="form-label">Nombre y Apellido:</label>
-                    <input type="text" class="form-control" name="Nombre y Apellido"
-                        placeholder="Nombre y Apellido">
-                </div>
-                <div class="mb-3">
-                    <label for="Correo Electrónico" class="form-label">Correo Electrónico:</label>
-                    <input type="text" class="form-control" name="Correo eletrónico"
-                        placeholder="Correo electrónico">
-                </div>
-                <div class="mb-3">
-                    <label for="Número de Celular" class="form-label">Número de Celular:</label>
-                    <input type="text" class="form-control" name="Número de Celular"
-                        placeholder="Número de celular">
-                </div>
-                <label for="DataList" class="form-label">¿Qué servicio desea realizar?</label>
-                <input class="mb-3 form-control" list="datalistOptions" id="exampleDataList"
-                    placeholder="Selecciona una opción">
-                <datalist id="datalistOptions">
-                    <option value="Service Completo">
-                    <option value="Frenos">
-                    <option value="Suspensión">
-                    <option value="Cambio de Aceite y Filtros">
-                    <option value="Distribución">
-                    <option value="Otro">
-                </datalist>
-                <h6>Seleccione la marca de su vehículo:</h6>
-                <select class="mb-3 form-select" aria-label="Default select example">
-                    <option selected>Elegir una opción</option>
-                    <option value="1">Chevrolet</option>
-                    <option value="2">Ford</option>
-                    <option value="3">Fiat</option>
-                    <option value="4">Renault</option>
-                    <option value="5">Honda</option>
-                    <option value="6">Nissan</option>
-                    <option value="7">Subaru</option>
-                </select>
-                <h6>Seleccione el tipo de combustible:</h6>
-                <select class="mb-3 form-select" aria-label="Default select example">
-                    <option selected>Elegir una opción</option>
-                    <option value="Nafta">Nafta</option>
-                    <option value="Diesel">Diesel</option>
-                    <option value="Nafta y GNC">Nafta y GNC</option>
-                </select>
-                <div class="mb-3">
-                    <label for="FormControlTextarea1" class="form-label">Agregar comentarios</label>
-                    <textarea class="form-control" id="FormControlTextarea1" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-success">
-                    Enviar
-                </button>
-                <button type="reset" class="btn btn-danger">
-                    Borrar
-                </button>
-            </fieldset>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+        <a class="navbar-brand">Rapid Lube Service</a>
+            <form class="d-flex" role="Buscar">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <h2>Segunda Entrega del Proyecto Final</h2>
+    <h3>Dom-Eventos-Storage-JSON</h3>
+    <h2 id="saludo"></h2>
+    <div id="contFormulario">
+    <p>Ingresa tus datos para comenzar</p>
+        <form id="formulario">
+            <input id="nombre" type="text"  placeholder="Nombre" >
+            <input id="apellido" type="text"placeholder="Apellido">
+            <input id="auto" type="text"placeholder="Auto">
+            <input id="modelo" type="text"placeholder="Modelo">
+            <input type="submit" value="Enviar">
         </form>
-        <div id = "registro"></div>
-        <script src="/JS/primeraEntrega.js"></script>
-    </body>
+    </div>
+    <div id="saludoUsuario"></div>
+    <div id="contenido"></div>
+<!--E-Commerce-->
+<div class="contenedor">
+    <div class="contenido-productos">
+    <div id="titulo">
+        <h1>Tienda Rapid Lube Service</h1>
+    </div>
+    <div>
+        <h3 class="texto">Productos</h3>
+        <div class="buscador">
+            <form id="formulario-buscador">
+            <input autocomplete="off" id="buscador-producto" type="text" placeholder="Buscar producto" name="producto">
+            </form>
+                <ul id="sugeridos"></ul>
+        </div>
+        <ul id="listado"></ul>
+        </div>
+    </div>
+    <div class="canasta">
+        <h4>Carrito</h4>
+        <div id="canasta"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="/JS/segundaEntrega.js"></script>
+</body>
 </html>
