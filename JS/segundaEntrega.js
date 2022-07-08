@@ -198,3 +198,45 @@ verficarStorage();
 
 buscadorProducto.onfocus = () => insertartBusquedasSugeridad();
 buscadorProducto.onblur = () => quitarBusquedasSugeridas();
+
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+    selectable: true,
+    headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    dateClick: function(info) {
+        // alert('¡Te esperamos! ' + info.dateStr);
+    },
+    select: function(info) {
+        // alert('Tu turno es el día ' + info.startStr );
+    }
+    });
+
+    calendar.render();
+})
+
+const btn = document.querySelector('#myBtn')
+
+btn.addEventListener('click', () => {
+    Swal.fire({
+        title: '¿Quiere confirmar el turno?',
+        icon: 'success',
+        showCancelButton: true,
+        confirmButtonText: '¡Sí!',
+        cancelButtonText: '¡No!'
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Turno agendado',
+                icon: 'success',
+                text: 'Lo esperamos'
+            })
+        }
+    })
+})
